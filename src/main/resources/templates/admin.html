@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Admin dashboard</title>
+    </head>
+    <body>
+
+        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+        <button> List participants</button>
+        
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+        
+        <div class="list">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                </tr>
+                <tr th:each="signup : ${list}">
+                    <td th:utext="${signup.name}"></td>
+                    <td th:utext="${signup.address}"></td>
+                    <td>
+                        <form action="#" th:action="@{/delete}" method="POST" id="deleteForm">
+                            <input name="signupId" id="signupId" type="hidden" th:value="${signup.id}"></input>
+                            <input type="submit" name="submit" value="Delete"></input>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

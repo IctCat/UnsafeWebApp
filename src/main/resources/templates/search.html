@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Admin dashboard</title>
+    </head>
+    <body>
+
+        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+        
+        <form th:action="@{/search}" method="post">
+            Name to search: <input name="name" type="text"></input>
+            <input type="submit" value="Search"/>
+        </form>
+        
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+            </tr>
+            <tr th:each="signup : ${results}">
+                <td th:utext="${signup.id}"></td>
+                <td th:utext="${signup.name}"></td>
+                <td th:utext="${signup.address}"></td>
+            </tr>
+        </table>
+        
+    </body>
+</html>
