@@ -80,17 +80,18 @@ public class SignupController {
     @RequestMapping(value = "/search", method = RequestMethod.POST)
     public String submitSearch(Model model, @RequestParam String name) throws SQLException {
         
-       /** Connection connection = DriverManager.getConnection("jdbc:h2:file:./database", "sa", "");
-        Statement st = connection.createStatement();
-        String query = "SELECT * FROM  Signup where name=" + name;
+        //Connection connection = DriverManager.getConnection("jdbc:h2:file:./database", "sa", "");
+        //Statement st = connection.createStatement();
+        //String query = "SELECT * FROM  signup where name=" + name;
 
-        ResultSet res = st.executeQuery(query);
-        String q="SELECT FROM Signup WHERE name=" + name;
-        Query query=em.createQuery(q);
-        List users=query.getResultList();
+        //ResultSet res = st.executeQuery(query);
+        //String q="SELECT * FROM signup WHERE name='"+ name + "'";
+        //ResultSet res = st.executeQuery( q );
+        //Query query=em.createQuery(q);
+        //List users=query.getResultList();
         
-        connection.close();*/
-                
+        //connection.close();
+        //System.out.println(res);        
                 
          
         /* List<Signup> results = SignupRepositoryImpl.createNativeQuery(
@@ -98,8 +99,7 @@ public class SignupController {
         .getResultList();
         */
         //This is the safe way: List<Signup> results = signupRepository.findByName(name, new Sort(Sort.Direction.ASC, "name"));
-        List<Signup> results = signupRepository.findByName(name, JpaSort.unsafe("LENGTH(name)"));
-                                                //findByName("lannister", new Sort("LENGTH(firstname)"))
+        List<Signup> results = signupRepository.findByName(name, JpaSort.unsafe("name)"));
         //List<Signup> results = signupRepository.findByName(name);
         System.out.println("FOUND: " + results);
         model.addAttribute("results", results);

@@ -1,0 +1,24 @@
+2018-12-29 23:36:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SIGNUP" not found; SQL statement:
+SELECT * FROM  Signup where name=Smith' or '1'='1 [42102-193]
+2018-12-29 23:37:59 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "SIGNUP" not found; SQL statement:
+SELECT * FROM  Signup where name=Smith' or '1'='1 [42102-193]
+2018-12-29 23:40:40 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "SIGNUP" not found; SQL statement:
+SELECT * FROM  Signup where name=Smith' or '1'='1 [42102-193]
+2018-12-29 23:40:45 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "SIGNUP" not found; SQL statement:
+SELECT * FROM  Signup where name=asd [42102-193]
+2018-12-29 23:42:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SIGNUP" not found; SQL statement:
+SELECT * FROM  signup where name=asd [42102-193]
+2018-12-29 23:44:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SIGNUP" not found; SQL statement:
+SELECT * FROM  signup where name=asd [42102-193]
+2018-12-29 23:46:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SIGNUP" not found; SQL statement:
+SELECT * FROM signup WHERE name='asd' [42102-193]
+2018-12-29 23:47:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SIGNUP" not found; SQL statement:
+SELECT * FROM signup WHERE name='asd' [42102-193]
